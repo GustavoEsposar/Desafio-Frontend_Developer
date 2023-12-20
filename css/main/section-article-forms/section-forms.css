@@ -1,0 +1,35 @@
+.section-article-forms .section-forms form {
+    display: flex;
+    flex-direction: column;
+}
+
+.section-article-forms .section-forms form > label {
+    margin-top: 1.25em;
+    margin-bottom: 0.5em;
+}
+
+.section-article-forms .section-forms form > label:first-of-type {
+    margin-top: 0;
+}
+
+.section-article-forms .section-forms form > input {
+    width: 21.25em;
+    height: 1.875em;
+}
+
+.section-article-forms .section-forms form > input:last-of-type {
+    margin-bottom: 0;
+}
+
+.section-article-forms .section-forms form > div {
+    margin-top: 1.25em;
+    margin-bottom: 1.4375em;
+}
+
+.section-article-forms .section-forms form > div input:last-of-type {
+    margin-left: 2.5em;
+}
+
+.section-article-forms .section-forms form .button {
+    height: 2.4375em;
+}
