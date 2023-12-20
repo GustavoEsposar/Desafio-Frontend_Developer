@@ -1,5 +1,6 @@
 @import "general.css";
 @import "variables.css";
+@import "header/header.css";
 @import "header/nav.css";
 @import "header/section-title.css";
 @import "main/section-article-forms.css";
