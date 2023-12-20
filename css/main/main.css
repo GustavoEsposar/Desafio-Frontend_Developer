@@ -1,0 +1,15 @@
+.table {
+    width: 100%;
+}
+
+.table .title {
+    width:1px;
+    padding: 0 10px;
+    white-space: nowrap;
+}
+
+.table td hr {
+    border: none; 
+    height: 1.5px; 
+    background-color: black; 
+}
