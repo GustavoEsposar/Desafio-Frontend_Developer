@@ -30,6 +30,21 @@
     margin-left: 2.5em;
 }
 
+.section-article-forms .section-forms form > div input:hover,
+.section-article-forms .section-forms form > div label:hover {
+    cursor: pointer;
+}
+
 .section-article-forms .section-forms form .button {
     height: 2.4375em;
+    background-color: var(--primary-color);
+    border: none;
+    border-radius: 5px;
+    transition: all 0.2s ease;
+}
+
+.section-article-forms .section-forms form .button:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+    box-shadow: 0 8px 8px black;
 }
