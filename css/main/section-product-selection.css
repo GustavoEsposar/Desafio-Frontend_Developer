@@ -12,6 +12,13 @@
     justify-content: space-between;
     margin-top: 3.125em;
     margin-bottom: 3.9375em;
+    font-size: 1em;
+}
+
+.section-product-selection .div-products > .product {
+    flex: 1 0 calc(25%);
+    max-width: calc(25%);
+    box-sizing: border-box;
 }
 
 .section-product-selection > button {
@@ -30,3 +37,7 @@
     transform: scale(1.05);
     box-shadow: 0 8px 8px black;
 }
+
+.last-row-product {
+    margin-bottom: 0;
+  }
