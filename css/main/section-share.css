@@ -42,6 +42,8 @@
 .section-share .form > div > div input {
     width: 21.25em;
     height: 1.875em;
+    padding: 10px;
+    font-size: 1em;
 }
 
 .section-share .form .button {
@@ -49,6 +51,7 @@
     margin-bottom: 4.485em;
     height: 2.4375em;
     width: 16.25em;
+    font-size: 1em;
     background-color: var(--primary-color);
     border: none;
     border-radius: 5px;
