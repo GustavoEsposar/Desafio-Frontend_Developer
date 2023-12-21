@@ -37,6 +37,7 @@
 
 .section-article-forms .section-forms form .button {
     height: 2.4375em;
+    width: 21.25em;
     background-color: var(--primary-color);
     border: none;
     border-radius: 5px;
