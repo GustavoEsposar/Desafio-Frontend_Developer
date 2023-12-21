@@ -16,9 +16,58 @@
 }
 
 .section-product-selection .div-products > .product {
-    flex: 1 0 calc(25%);
-    max-width: calc(25%);
+    flex: 1 0 calc(25% - 41px);
+    max-width: calc(25% - 41px);
     box-sizing: border-box;
+    margin-bottom: 1.8125em;
+}
+
+.section-product-selection .div-products > .product img {
+    width: 12.5em;
+    height: 9.375em;
+}
+
+.section-product-selection .div-products > .product .product-title {
+    font-size: 1em;
+    margin-top: 14px;
+    margin-bottom: 10px;
+}
+
+.section-product-selection .div-products > .product .product-description {
+    font-size: 0.75em;
+}
+
+.section-product-selection .div-products > .product .old-price {
+    font-size: 0.75em;
+    margin-top: 0.5em;
+}
+
+.section-product-selection .div-products > .product .new-price  {
+    font-size: 1em;
+    font-weight: bold;
+    margin-top: 0.5em;
+}
+
+.section-product-selection .div-products > .product .product-installments {
+    margin-top: 0.5em;
+    font-size: 0.75em;
+}
+
+.section-product-selection .div-products > .product .buy-button {
+    width: 100%;
+    height: 1.875em;
+    background-color: var(--primary-color);
+    border-radius: 5px;
+    border: none;
+    font-size: 1em;
+    margin-top: 0.625em;
+    transition: all 0.2s ease;
+}
+
+.section-product-selection .div-products > .product .buy-button:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+    box-shadow: 0 8px 8px black;
 }
 
 .section-product-selection > button {
@@ -40,4 +89,4 @@
 
 .last-row-product {
     margin-bottom: 0;
-  }
+}
