@@ -57,6 +57,14 @@ h6 {
     width: 60vw;
 }
 
+.visible {
+    display: block;
+}
+
+.hidden {
+    display: none;
+}
+
 .lds-dual-ring {
     position: fixed;
     top: 50%;
@@ -85,12 +93,4 @@ h6 {
     100% {
         transform: rotate(360deg);
     }
-}
-
-.visible {
-    display: block;
-}
-
-.hidden {
-    display: none;
 }
