@@ -74,7 +74,7 @@ const ProductPageManager = {
         CSSAnimation.loadVisualization()
         const response = await this.tryConnectURL()
         await this.extractDataFromResponse(response)
-        this.extractProductsArray()
+        this.addNewProducts()
         CSSAnimation.loadVisualization()
     },
 
@@ -94,21 +94,25 @@ const ProductPageManager = {
         this.URL = `https://${this.data.nextPage}`;
     },
 
-    extractProductsArray() {
+    addNewProducts() {
         this.data.products.forEach(product => {
-            DIV_PRODUCTS_CLASS.innerHTML += `
-                <div class="product" id="${product.id}">
-                    <img src="${product.image}" alt="Foto do Produto">
-                    <h4 class="product-title">${product.name}</h4>
-                    <p class="product-description">${product.description}</p>                        
-                    <p class="old-price">De: R$${product.oldPrice}</p>
-                    <p class="new-price">Por: R$${product.price}</p>
-                    <p class="product-installments">ou ${product.installments.count}x de R$${product.installments.value}</p>
-                    <button class="buy-button">Comprar</button>
-                </div>
-            `
+            this.productHTMLStructure(product)
         });
-    }  
+    },
+
+    productHTMLStructure(product) {
+        DIV_PRODUCTS_CLASS.innerHTML += `
+            <div class="product" id="${product.id}">
+                <img src="${product.image}" alt="Foto do Produto">
+                <h4 class="product-title">${product.name}</h4>
+                <p class="product-description">${product.description}</p>                        
+                <p class="old-price">De: R$${product.oldPrice}</p>
+                <p class="new-price">Por: R$${product.price}</p>
+                <p class="product-installments">ou ${product.installments.count}x de R$${product.installments.value}</p>
+                <button class="buy-button">Comprar</button>
+            </div>
+        `
+    }
 };
 
 async function updateDivProductsHtml() {
