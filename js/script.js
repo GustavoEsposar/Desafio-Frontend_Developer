@@ -50,40 +50,43 @@ const ProductPageManager = {
     data: null,
 
     async updateDivProductsHtml() {
-        try {
-            const response = await fetch(this.URL);
-            
-            if (!response.ok) {
-                throw new Error('Network response was not ok.');
-            }
-
-            //getcontentfromurl
-            this.data = await response.json();
-
-            //extractPageNumber
-            this.URL = `https://${this.data.nextPage}`;
-
-            //extractProductsArray
-            this.data.products.forEach(product => {
-                DIV_PRODUCTS_CLASS.innerHTML += `
-                    <div class="product" id="${product.id}">
-                        <img src="${product.image}" alt="Foto do Produto">
-                        <h4 class="product-title">${product.name}</h4>
-                        <p class="product-description">${product.description}</p>                        
-                        <p class="old-price">De: R$${product.oldPrice}</p>
-                        <p class="new-price">Por: R$${product.price}</p>
-                        <p class="product-installments">ou ${product.installments.count}x de R$${product.installments.value}</p>
-                        <button class="buy-button">Comprar</button>
-                    </div>
-                `
-            });
-
-        } catch (error) {
-            console.error('There was a problem fetching the data:', error);
-            throw error;
-        }
+        const response = await this.tryConnectURL()
+        await this.extractDataFromResponse(response)
+        this.extractProductsArray()
     },
-    
+
+    async tryConnectURL() {
+        const response = await fetch(this.URL);
+        
+        if (!response.ok) {
+            throw new Error('There was a problem fetching the data: Network response was not ok.');
+        }
+
+        return response
+    }
+    ,
+
+    async extractDataFromResponse(response) {
+        this.data = await response.json();
+        this.URL = `https://${this.data.nextPage}`;
+    }
+    ,
+
+    extractProductsArray() {
+        this.data.products.forEach(product => {
+            DIV_PRODUCTS_CLASS.innerHTML += `
+                <div class="product" id="${product.id}">
+                    <img src="${product.image}" alt="Foto do Produto">
+                    <h4 class="product-title">${product.name}</h4>
+                    <p class="product-description">${product.description}</p>                        
+                    <p class="old-price">De: R$${product.oldPrice}</p>
+                    <p class="new-price">Por: R$${product.price}</p>
+                    <p class="product-installments">ou ${product.installments.count}x de R$${product.installments.value}</p>
+                    <button class="buy-button">Comprar</button>
+                </div>
+            `
+        });
+    }  
 };
 
 async function updateDivProductsHtml() {
