@@ -6,9 +6,7 @@
 
 .section-product-selection .div-products {
     display: flex;
-    flex-direction: row;
     flex-wrap: wrap;
-    width: 100%;
     justify-content: space-between;
     margin-top: 3.125em;
     margin-bottom: 3.9375em;
@@ -16,10 +14,17 @@
 }
 
 .section-product-selection .div-products > .product {
-    flex: 1 0 calc(25% - 41px);
-    max-width: calc(25% - 41px);
+    flex: 1 0 calc(25% - 20px); 
+    max-width: calc(25% - 20px); 
     box-sizing: border-box;
     margin-bottom: 1.8125em;
+}
+
+@media screen and (max-width: 665px) {
+    .section-product-selection .div-products > .product {
+        flex-basis: calc(50% - 20px);
+        max-width: calc(50% - 20px); 
+    }
 }
 
 .section-product-selection .div-products > .product img {
