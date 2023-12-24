@@ -1,0 +1,9 @@
+.footer {
+    height: 293px;
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    text-align: center;
+    line-height: 1.4em;
+    padding-top: 157px;
+}

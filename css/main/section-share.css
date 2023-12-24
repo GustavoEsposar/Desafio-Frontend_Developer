@@ -1,0 +1,65 @@
+.section-share {
+    text-align: center;
+}
+
+.section-share .h3-share {
+    position: relative;
+    z-index: 1;
+}
+
+.section-share > h5 {
+    font-size: 0.875em;
+    margin-top: 2.75em;
+    margin-bottom: 2.4375em;
+}
+
+.section-share .form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.section-share .form > div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.section-share .form > div > div {
+    display: flex;
+    flex-direction: column;
+    text-align: start;
+}
+
+.section-share .form > div > div:first-of-type {
+    margin-right: 2.5em;
+}
+
+.section-share .form > div > div label {
+    margin-bottom: 0.5em;
+}
+
+.section-share .form > div > div input {
+    width: 21.25em;
+    height: 1.875em;
+    padding: 10px;
+    font-size: 1em;
+}
+
+.section-share .form .button {
+    margin-top: 3.125em;
+    margin-bottom: 4.485em;
+    height: 2.4375em;
+    width: 16.25em;
+    font-size: 1em;
+    background-color: var(--primary-color);
+    border: none;
+    border-radius: 5px;
+    transition: all 0.2s ease;
+}
+
+.section-share .form .button:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+    box-shadow: 0 8px 8px black;
+}

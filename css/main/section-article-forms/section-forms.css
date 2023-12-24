@@ -1,0 +1,53 @@
+.section-article-forms .section-forms form {
+    display: flex;
+    flex-direction: column;
+}
+
+.section-article-forms .section-forms form > label {
+    margin-top: 1.25em;
+    margin-bottom: 0.5em;
+}
+
+.section-article-forms .section-forms form > label:first-of-type {
+    margin-top: 0;
+}
+
+.section-article-forms .section-forms form > input {
+    width: 21.25em;
+    height: 1.875em;
+    font-size: 1em;
+    padding: 10px;
+}
+
+.section-article-forms .section-forms form > input:last-of-type {
+    margin-bottom: 0;
+}
+
+.section-article-forms .section-forms form > div {
+    margin-top: 1.25em;
+    margin-bottom: 1.4375em;
+}
+
+.section-article-forms .section-forms form > div input:last-of-type {
+    margin-left: 2.5em;
+}
+
+.section-article-forms .section-forms form > div input:hover,
+.section-article-forms .section-forms form > div label:hover {
+    cursor: pointer;
+}
+
+.section-article-forms .section-forms form .button {
+    height: 2.4375em;
+    width: 21.25em;
+    background-color: var(--primary-color);
+    border: none;
+    border-radius: 5px;
+    transition: all 0.2s ease;
+}
+
+.section-article-forms .section-forms form .button:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+    box-shadow: 0 8px 8px black;
+}

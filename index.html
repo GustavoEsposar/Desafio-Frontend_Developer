@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Desafio | Frontend Developer</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
 </head>
 <body>
     <div class="container">
@@ -42,7 +43,7 @@
                         ut tellus vulputate tincidunt. Aenean lacinia euismod augue vel egestas. Class aptent taciti
                         sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vestibulum vel urna
                         tortor. Vivamos et arcu non felis tristique oleifend.
-                    </p>
+                    </p> <br>
                     <p>
                         Morbi eu condimentum urna. Curabitur eu magna eget turpis condimentum ultrices.
                         Suspendisse quis lorem ultricies. pulvinar purus sed, egestas erat. Etiam ultricies a ante vehicula
@@ -61,45 +62,51 @@
                     
                         <label for="cpf">CPF:</label>
                         <input type="text" id="cpf" name="cpf" inputmode="numeric">
+
+                        <div>
+                            <input type="radio" name="genero" id="masculino">
+                            <label for="masculino">Masculino</label>
+                        
+                            <input type="radio" name="genero" id="feminino">
+                            <label for="feminino">Feminino</label>
+                        </div>
                     
-                        <input type="radio" name="genero" id="masculino">
-                        <label for="masculino">Masculino</label>
-                    
-                        <input type="radio" name="genero" id="feminino">
-                        <label for="feminino">Feminino</label>
-                    
-                        <input type="submit" value="Submit">
+                        <input class="button" type="submit" value="Enviar">
                     </form>                    
                 </section>
             </section>
             <section class="section-product-selection">
-                <h3 class="h3-product">Sua seleção especial</h3>
-                <div class="div-products">
-                    <div class="product" id="0">
-                        <img src="caminho/para/imagem.jpg" alt="Nome do Produto">
-                        <h4 class="product-title">Nome do Produto</h4>
-                        <p class="product-description">Descrição do Produto</p>
-                        <div class="product-prices">
-                            <span class="old-price">Preço Antigo</span>
-                            <span class="new-price">Preço Novo</span>
-                        </div>
-                        <p class="product-installments">Parcelas</p>
-                        <button class="buy-button">Comprar</button>
-                    </div>              
+                <table class="table">
+                    <td><hr/></td>
+                    <td class="title"><h3 class="h3-product">Sua seleção especial</h3>
+                    </td>
+                    <td><hr/></td>
+                </table>
+                <div class="div-products"> 
                 </div>
-                <button id="nextButton">Carregar Próxima Página</button>
+                <button id="nextPageButton">Ainda mais produtos aqui!</button>
             </section>
             <section class="section-share">
-                <h3 class="h3-share">Compartilhe a novidade</h3>
+                <table class="table">
+                    <td><hr/></td>
+                    <td class="title"><h3 class="h3-share">Compartilhe a novidade</h3></td>
+                    <td><hr/></td>
+                </table>
                 <h5>Quer que seus amigos também ganhem a lista personalizada deles? Preencha agora!</h5>
-                <form>
-                    <label for="nome-share">Seu nome:</label>
-                    <input type="text" id="nome-share" name="nome-share">
-                
-                    <label for="email-share">E-mail:</label>
-                    <input type="email-share" id="email-share" name="email-share">
+                <form class="form">
+                    <div>
+                        <div>
+                            <label for="nome-share">Seu nome:</label>
+                            <input type="text" id="nome-share" name="nome-share">
+                        </div>
+
+                        <div>
+                            <label for="email-share">E-mail:</label>
+                            <input type="email-share" id="email-share" name="email-share">
+                        </div>
+                    </div>
                     
-                    <input type="submit" value="Submit">
+                    <input class="button" type="submit" value="Enviar agora">
                 </form>
             </section>
         </main>
@@ -111,5 +118,6 @@
             </h6>
         </footer>
     </div>
+    <script src="js/script.js"></script>
 </body>
 </html>
