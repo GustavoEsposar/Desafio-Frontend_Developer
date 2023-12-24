@@ -1,6 +1,9 @@
 .footer {
-    margin-top: 9.8125em;
-    margin-bottom: 5.375em;
+    height: 293px;
+    display: flex;
+    align-items: start;
+    justify-content: center;
     text-align: center;
     line-height: 1.4em;
+    padding-top: 157px;
 }
