@@ -2,10 +2,27 @@
 const PRODUCTS_PER_ROW = 4;
 
 function updateLastRowProuctsClass() {
+    removeClassFromOldLastRow()
+    addClassToNewLastRow()
+}
+
+function removeClassFromOldLastRow() {
+    const productArray = getLastRowProducts()
+    productArray.forEach(product => {
+        product.classList.remove('last-row-product');
+    });
+}
+
+function getLastRowProducts() {
+    return document.querySelectorAll('.last-row-product')
+}
+
+function addClassToNewLastRow() {
     const productArray = getProductsElementsArray()
     const lastRowStartIndex = getLastRowStartIndex(productArray)
     addClassToLastRowProducts(productArray, lastRowStartIndex)
 }
+
 
 function getProductsElementsArray() {
     return productArray = Array.from(document.querySelectorAll('.product'));
