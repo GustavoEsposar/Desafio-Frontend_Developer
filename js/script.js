@@ -5,21 +5,13 @@ const DIV_PRODUCTS_CLASS = document.querySelector('.div-products');
 const LDS_DUAL_RING_CLASS = document.querySelector('.lds-dual-ring');
 // --------------------------------------------------------------------------------
 
-const CSSAnimation = {
-    loadVisualization() {
-        const isHidden = LDS_DUAL_RING_CLASS.classList.contains('hidden');
-        if(isHidden) {
-            this.ShowLoadVisualization(); return
-        }
-        this.HideLoadVisualization()
-    },
-    
-    ShowLoadVisualization() {
+const LoadVisualization = {
+    Show() {
         LDS_DUAL_RING_CLASS.classList.remove('hidden')
         LDS_DUAL_RING_CLASS.classList.add('visible')
     },
     
-    HideLoadVisualization() {
+    Hide() {
         LDS_DUAL_RING_CLASS.classList.remove('visible')
         LDS_DUAL_RING_CLASS.classList.add('hidden')
     }
@@ -71,11 +63,11 @@ const ProductPageManager = {
     data: null,
 
     async updateDivProductsHtml() {
-        CSSAnimation.loadVisualization()
+        LoadVisualization.Show();
         const response = await this.tryConnectURL()
         await this.extractDataFromResponse(response)
         this.addNewProducts()
-        CSSAnimation.loadVisualization()
+        LoadVisualization.Hide();
     },
 
     async tryConnectURL() {
