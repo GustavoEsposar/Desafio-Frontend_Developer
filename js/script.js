@@ -6,8 +6,9 @@ const LDS_DUAL_RING_CLASS = document.querySelector('.lds-dual-ring');
 // ----------------------------------------------- global functions -----------------------------------------------
 async function updateDivProductsHtml() {
     try {
-        await ProductPageManager.updateDivProductsHtml();
+        await ProductPageManager.updateDivProductsHtml()
         LastRowProducts.updateLastRowProuctsClass()
+        EventHandlers.init();
     } catch (error) {
         console.error('There was a problem updating the products:', error);
     }
@@ -116,25 +117,26 @@ const LoadVisualization = {
 };
 
 const EventHandlers = {
-    CONTAINER: document.querySelector('.container'),
-    NEXT_PAGE_BUTTON_ID: document.getElementById('nextPageButton'),
-    SHARE_BUTTON: document.getElementById('share-button'),
     DIV_RESPONSE: document.querySelector('.response'),
+    BUY_BUTTON: document.querySelectorAll('.buy-button'),
 
     init() {
-        this.nextPageButton()
-        this.shareButton()
+        this.nextPageButtonClick()
+        this.shareButtonClick()
         this.divResponseClick()
+        this.signUpClick()
+        this.buyButtonClick()
+        this.navButtonClick()
     },
   
-    nextPageButton() {
-        this.NEXT_PAGE_BUTTON_ID.addEventListener('click', async () => {
+    nextPageButtonClick() {
+        document.getElementById('nextPageButton').addEventListener('click', async () => {
             updateDivProductsHtml();
         });
     },
     
-    shareButton() {
-        this.SHARE_BUTTON.addEventListener('click', (event) => {
+    shareButtonClick() {
+        document.getElementById('share-button').addEventListener('click', (event) => {
             event.preventDefault()
             this.DIV_RESPONSE.classList.remove('hidden');
         });
@@ -144,10 +146,51 @@ const EventHandlers = {
         this.DIV_RESPONSE.addEventListener('click', () => {
             this.DIV_RESPONSE.classList.add('hidden');
         });
+    },
+
+    signUpClick() {
+        document.getElementById('sign-up').addEventListener('click', (event) => {
+            event.preventDefault()
+            this.DIV_RESPONSE.classList.remove('hidden');
+        });
+    },
+
+    buyButtonClick() {
+        this.updateBuyButtonList()
+        this.addBuyButtonsListener()
+    },
+    
+    addBuyButtonsListener() {
+        this.BUY_BUTTON.forEach(button => {
+            button.addEventListener('click', () => {
+                this.DIV_RESPONSE.classList.remove('hidden');
+            });
+        });
+    },
+
+    updateBuyButtonList() {
+        this.BUY_BUTTON = document.querySelectorAll('.buy-button')
+    },
+
+    navButtonClick() {
+        const NAV_UL_BUTTONS = this.selectNavButtons()
+        this.addNavButtonsListener(NAV_UL_BUTTONS)
+    },
+
+    selectNavButtons() {
+        const NAV_UL = document.querySelector('.ul');
+        return NAV_UL.querySelectorAll('li');
+    },
+
+    addNavButtonsListener(NAV_UL_BUTTONS) {
+        NAV_UL_BUTTONS.forEach(button => {
+            button.addEventListener('click', () => {
+                this.DIV_RESPONSE.classList.remove('hidden');
+            });
+        });
     }
 };
   
 document.addEventListener('DOMContentLoaded', () => {
     updateDivProductsHtml();
-    EventHandlers.init();
 });
