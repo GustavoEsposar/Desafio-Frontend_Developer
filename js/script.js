@@ -1,30 +1,26 @@
 // ------------------------------- constants --------------------------------------
 const PRODUCTS_PER_ROW = 4;
-const NEXT_PAGE_BUTTON_ID = document.getElementById('nextPageButton');
 const DIV_PRODUCTS_CLASS = document.querySelector('.div-products');
 const LDS_DUAL_RING_CLASS = document.querySelector('.lds-dual-ring');
 // --------------------------------------------------------------------------------
-
-const LoadVisualization = {
-    Show() {
-        LDS_DUAL_RING_CLASS.classList.remove('hidden')
-        LDS_DUAL_RING_CLASS.classList.add('visible')
-    },
-    
-    Hide() {
-        LDS_DUAL_RING_CLASS.classList.remove('visible')
-        LDS_DUAL_RING_CLASS.classList.add('hidden')
+// ----------------------------------------------- global functions -----------------------------------------------
+async function updateDivProductsHtml() {
+    try {
+        await ProductPageManager.updateDivProductsHtml();
+        LastRowProducts.updateLastRowProuctsClass()
+    } catch (error) {
+        console.error('There was a problem updating the products:', error);
     }
-};
-
+}
+// ----------------------------------------------------------------------------------------------------------------
 const LastRowProducts = {
     updateLastRowProuctsClass() {
-        removeClassFromOldLastRow()
-        addClassToNewLastRow()
+        this.removeClassFromOldLastRow()
+        this.addClassToNewLastRow()
     },
     
     removeClassFromOldLastRow() {
-        const productArray = getLastRowProducts()
+        const productArray = this.getLastRowProducts()
         productArray.forEach(product => {
             product.classList.remove('last-row-product');
         });
@@ -35,9 +31,9 @@ const LastRowProducts = {
     },
     
     addClassToNewLastRow() {
-        const productArray = getProductsElementsArray()
-        const lastRowStartIndex = getLastRowStartIndex(productArray)
-        addClassToLastRowProducts(productArray, lastRowStartIndex)
+        const productArray = this.getProductsElementsArray()
+        const lastRowStartIndex = this.getLastRowStartIndex(productArray)
+        this.addClassToLastRowProducts(productArray, lastRowStartIndex)
     },
     
     getProductsElementsArray() {
@@ -107,17 +103,51 @@ const ProductPageManager = {
     }
 };
 
-async function updateDivProductsHtml() {
-    try {
-        await ProductPageManager.updateDivProductsHtml();
-        LastRowProducts.updateLastRowProuctsClass()
-    } catch (error) {
-        console.error('There was a problem updating the products:', error);
+const LoadVisualization = {
+    Show() {
+        LDS_DUAL_RING_CLASS.classList.remove('hidden')
+        LDS_DUAL_RING_CLASS.classList.add('visible')
+    },
+    
+    Hide() {
+        LDS_DUAL_RING_CLASS.classList.remove('visible')
+        LDS_DUAL_RING_CLASS.classList.add('hidden')
     }
-}
+};
 
-updateDivProductsHtml();
+const EventHandlers = {
+    CONTAINER: document.querySelector('.container'),
+    NEXT_PAGE_BUTTON_ID: document.getElementById('nextPageButton'),
+    SHARE_BUTTON: document.getElementById('share-button'),
+    DIV_RESPONSE: document.querySelector('.response'),
 
-NEXT_PAGE_BUTTON_ID.addEventListener('click', async () => {
+    init() {
+        this.nextPageButton()
+        this.shareButton()
+        this.divResponseClick()
+    },
+  
+    nextPageButton() {
+        this.NEXT_PAGE_BUTTON_ID.addEventListener('click', async () => {
+            updateDivProductsHtml();
+        });
+    },
+    
+    shareButton() {
+        this.SHARE_BUTTON.addEventListener('click', (event) => {
+            event.preventDefault()
+            this.DIV_RESPONSE.classList.remove('hidden');
+        });
+    },
+
+    divResponseClick() {
+        this.DIV_RESPONSE.addEventListener('click', () => {
+            this.DIV_RESPONSE.classList.add('hidden');
+        });
+    }
+};
+  
+document.addEventListener('DOMContentLoaded', () => {
     updateDivProductsHtml();
+    EventHandlers.init();
 });

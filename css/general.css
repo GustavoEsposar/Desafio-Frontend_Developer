@@ -63,6 +63,7 @@ h6 {
 
 .hidden {
     display: none;
+    top: -200% !important;
 }
 
 .lds-dual-ring {
@@ -93,4 +94,29 @@ h6 {
     100% {
         transform: rotate(360deg);
     }
+}
+
+.add-opacity {
+    opacity: 0.5;
+}
+
+.add-opacity .response {
+    opacity: 1.0 !important;
+}
+
+.response {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    max-width: 30%;
+    left: 50%;
+    top: 50%;
+    z-index: 1;
+    transition: all 0.3s;
+    transform: translate(-50%, -50%);
+    border-radius: 15px;
+    cursor: pointer;
+    padding: 20px;
+    color: white;
+    background-color: black;
 }
