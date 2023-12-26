@@ -1,4 +1,5 @@
-@import "general.css";
+@import "global.css";
+@import "secondary-styles.css";
 @import "variables.css";
 @import "header/header.css";
 @import "header/nav.css";
