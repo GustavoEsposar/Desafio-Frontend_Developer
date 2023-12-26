@@ -69,6 +69,10 @@ const ProductPageManager = {
 
     async tryConnectURL() {
         const response = await fetch(this.URL);
+
+        if (response.status === 503) {
+            throw new Error('Service Unavailable: The server is currently unavailable.');
+        }
         
         if (!response.ok) {
             throw new Error('There was a problem fetching the data: Network response was not ok.');
