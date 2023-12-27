@@ -195,3 +195,4 @@ document.addEventListener('DOMContentLoaded', () => {
     updateDivProductsHtml();
     EventHandlers.init();    
   });
+  
