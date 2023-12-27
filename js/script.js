@@ -8,7 +8,7 @@ async function updateDivProductsHtml() {
     try {
         await ProductPageManager.updateDivProductsHtml()
         LastRowProducts.updateLastRowProuctsClass()
-        EventHandlers.init();
+        EventHandlers.buyButtonClick()
     } catch (error) {
         console.error('There was a problem updating the products:', error);
     }
@@ -69,10 +69,6 @@ const ProductPageManager = {
 
     async tryConnectURL() {
         const response = await fetch(this.URL);
-
-        if (response.status === 503) {
-            throw new Error('Service Unavailable: The server is currently unavailable.');
-        }
         
         if (!response.ok) {
             throw new Error('There was a problem fetching the data: Network response was not ok.');
@@ -194,7 +190,8 @@ const EventHandlers = {
         });
     }
 };
-  
+
 document.addEventListener('DOMContentLoaded', () => {
     updateDivProductsHtml();
-});
+    EventHandlers.init();    
+  });
