@@ -1,4 +1,5 @@
 // ------------------------------- constants --------------------------------------
+const errorImage = '../img/error.png';
 const PRODUCTS_PER_ROW = 4;
 const DIV_PRODUCTS_CLASS = document.querySelector('.div-products');
 const LDS_DUAL_RING_CLASS = document.querySelector('.lds-dual-ring');
@@ -92,7 +93,7 @@ const ProductPageManager = {
     productHTMLStructure(product) {
         DIV_PRODUCTS_CLASS.innerHTML += `
             <div class="product" id="${product.id}">
-                <img src="${product.image}" alt="Foto do Produto">
+                <img src="${product.image ? product.image : errorImage}" alt="Foto do Produto">
                 <h4 class="product-title">${product.name}</h4>
                 <p class="product-description">${product.description}</p>                        
                 <p class="old-price">De: R$${product.oldPrice}</p>
