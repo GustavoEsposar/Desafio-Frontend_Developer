@@ -3,3 +3,11 @@
     height: 400px;
     padding-bottom: 120px;
 }
+
+@media screen and (max-width: 420px) {
+    .header {
+        padding-top: 66px;
+        height: 398px;
+        padding-bottom: 68.89px;
+    }
+}

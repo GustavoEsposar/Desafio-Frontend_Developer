@@ -5,3 +5,14 @@
 .section-title h5 {
     margin-top: 1.5em;
 }
+
+@media screen and (max-width: 420px) {
+    .section-title {
+        text-align: left;
+    }
+
+    .section-title h5 {
+        margin-top: 0.5625em;
+        font-size: 14px;
+    }
+}

@@ -56,3 +56,14 @@ h6 {
     margin: 0 auto;
     width: 60vw;
 }
+
+@media screen and (max-width: 420px) {
+    .container {
+        width: 90vw;
+    }
+
+    body::before {
+        height: 70%;
+        background: linear-gradient(15deg, white 25%, var(--primary-color) 0%);
+    }
+}
