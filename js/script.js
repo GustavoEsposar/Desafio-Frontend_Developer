@@ -5,6 +5,11 @@ const DIV_PRODUCTS_CLASS = document.querySelector('.div-products');
 const LDS_DUAL_RING_CLASS = document.querySelector('.lds-dual-ring');
 // --------------------------------------------------------------------------------
 // ----------------------------------------------- global functions -----------------------------------------------
+document.addEventListener('DOMContentLoaded', () => {
+    updateDivProductsHtml();
+    EventHandlers.init();    
+  });
+
 async function updateDivProductsHtml() {
     try {
         await ProductPageManager.updateDivProductsHtml()
@@ -191,9 +196,4 @@ const EventHandlers = {
         });
     }
 };
-
-document.addEventListener('DOMContentLoaded', () => {
-    updateDivProductsHtml();
-    EventHandlers.init();    
-  });
   
