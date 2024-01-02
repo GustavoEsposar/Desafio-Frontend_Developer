@@ -58,23 +58,3 @@ Assim que obter os dados, você deverá implementar os seguintes pontos:
 > Your code will be better understood in English ;)
 
 ---
-
-## Critérios de avaliação
-- Commits significativos
-
-- Arquitetura e organização do sistema
-
-- Conhecimento de responsividade
-
-- Modularidade e reusabilidade
-
-- Boas práticas de programação
-
----
-
-## Dúvidas
-Em caso de dúvidas, consulte o Suporte Técnico em nossa comunidade do Discord.
-
----
-
-**Boa sorte =]**
