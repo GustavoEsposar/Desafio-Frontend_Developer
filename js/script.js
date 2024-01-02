@@ -99,12 +99,14 @@ const ProductPageManager = {
         DIV_PRODUCTS_CLASS.innerHTML += `
             <div class="product" id="${product.id}">
                 <img src="${product.image ? product.image : errorImage}" alt="Foto do Produto">
-                <h4 class="product-title">${product.name}</h4>
-                <p class="product-description">${product.description}</p>                        
-                <p class="old-price">De: R$${product.oldPrice}</p>
-                <p class="new-price">Por: R$${product.price}</p>
-                <p class="product-installments">ou ${product.installments.count}x de R$${product.installments.value}</p>
-                <button class="buy-button">Comprar</button>
+                <div class="product-details">
+                    <h4 class="product-title">${product.name}</h4>
+                    <p class="product-description">${product.description}</p>
+                    <p class="old-price">De: R$${product.oldPrice}</p>
+                    <p class="new-price">Por: R$${product.price}</p>
+                    <p class="product-installments">ou ${product.installments.count}x de R$${product.installments.value}</p>
+                    <button class="buy-button">Comprar</button>
+                </div>
             </div>
         `
     }
