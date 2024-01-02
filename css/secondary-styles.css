@@ -65,3 +65,10 @@
     border: 1px solid black;
     box-shadow: 0 0 15px black
 }
+
+@media screen and (max-width: 420px) {
+    .response {
+        max-width: 100%;
+        width: 80%;
+    }
+}

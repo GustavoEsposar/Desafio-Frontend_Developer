@@ -153,6 +153,11 @@ const EventHandlers = {
     divResponseClick() {
         this.DIV_RESPONSE.addEventListener('click', () => {
             this.DIV_RESPONSE.classList.add('hidden');
+            this.DIV_RESPONSE.innerHTML = `
+            <p>
+                Este botão não possui funcionalidade atribuida, tudo certo. <br> ;&rpar;
+            </p>
+            `
         });
     },
 
