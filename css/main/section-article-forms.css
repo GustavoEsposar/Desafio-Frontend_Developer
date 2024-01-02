@@ -3,3 +3,9 @@
     margin-bottom: 5em;
     display: flex;
 }
+
+@media screen and (max-width: 420px) {
+    .section-article-forms {
+        flex-direction: column;
+    }
+}

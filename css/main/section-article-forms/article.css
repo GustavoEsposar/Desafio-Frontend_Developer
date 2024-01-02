@@ -10,3 +10,10 @@
 .section-article-forms .article p {
     font-size: 0.9em;
 }
+
+@media screen and (max-width: 420px) {
+    .section-article-forms .article {
+        margin-right: 0;
+        padding-bottom: 1.875em;
+    }
+}

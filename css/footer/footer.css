@@ -7,3 +7,10 @@
     line-height: 1.4em;
     padding-top: 157px;
 }
+
+@media screen and (max-width: 420px) {
+    .footer {
+        height: 157px;
+        padding-top: 71px;
+    }
+}

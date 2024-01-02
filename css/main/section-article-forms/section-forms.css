@@ -17,6 +17,7 @@
     height: 1.875em;
     font-size: 1em;
     padding: 10px;
+    color: black;
 }
 
 .section-article-forms .section-forms form > input:last-of-type {
@@ -50,4 +51,11 @@
     cursor: pointer;
     transform: scale(1.05);
     box-shadow: 0 8px 8px black;
+}
+
+@media screen and (max-width: 420px) {
+    .section-article-forms .section-forms {
+        display: flex;
+        justify-content: center;
+    }
 }

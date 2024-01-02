@@ -63,7 +63,10 @@ h6 {
     }
 
     body::before {
-        height: 70%;
         background: linear-gradient(15deg, white 25%, var(--primary-color) 0%);
+    }
+
+    body::after {
+        height: 157px;
     }
 }
