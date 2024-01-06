@@ -23,6 +23,9 @@
 .section-product-selection .div-products > .product img {
     width: 12.5em;
     height: 9.375em;
+    background-image: url('../../img/error.png');
+    min-width: 12.5em;
+    min-height: 9.375em;
 }
 
 .section-product-selection .div-products > .product .product-title {
