@@ -98,7 +98,7 @@ const ProductPageManager = {
     productHTMLStructure(product) {
         DIV_PRODUCTS_CLASS.innerHTML += `
             <div class="product" id="${product.id}">
-                <img src="${product.image}" alt="Foto do Produto: ${product.name}">
+                <img src="${product.image}" alt="Foto do Produto">
                 <div class="product-details">
                     <h4 class="product-title">${product.name}</h4>
                     <p class="product-description">${product.description}</p>
